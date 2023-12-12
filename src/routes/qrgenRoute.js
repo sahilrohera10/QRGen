@@ -1,5 +1,6 @@
 const app = require("express");
-const { qrgen } = require("../controllers/qrgenCtlr");
+
+const { qrgen, qrgenimage } = require("../controllers/qrgenCtlr");
 
 const route = app.Router();
 

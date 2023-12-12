@@ -6,7 +6,10 @@ async function qrgen(req, res) {
   const { data } = req.body;
 
   try {
-    const qrcode = await qr.toDataURL(data);
+    const qrcode = await qr.toDataURL(data, {
+      errorCorrectionLevel: "H",
+      version: 5,
+    });
     console.log("QR generated");
     res.status(200).json({ qrCode: qrcode });
   } catch (error) {
